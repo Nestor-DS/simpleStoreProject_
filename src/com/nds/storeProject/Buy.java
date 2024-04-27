@@ -1,3 +1,5 @@
+package com.nds.storeProject;
+
 public class Buy implements Comparable<Buy>{
     private double value;
     private String description;
@@ -17,7 +19,7 @@ public class Buy implements Comparable<Buy>{
 
     @Override
     public String toString() {
-        return "Buy:" +
+        return "com.nds.storeProject.Buy:" +
                 "value=" + value +
                 ", description='" + description;
     }
