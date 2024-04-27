@@ -1,10 +1,10 @@
 package com.nds.storeProject;
 
-public class Buy implements Comparable<Buy>{
+public class PurchaseManager implements Comparable<PurchaseManager>{
     private double value;
     private String description;
 
-    public Buy(double value, String description) {
+    public PurchaseManager(double value, String description) {
         this.value = value;
         this.description = description;
     }
@@ -25,7 +25,7 @@ public class Buy implements Comparable<Buy>{
     }
 
     @Override
-    public int compareTo(Buy otherBuy) {
-        return Double.valueOf(this.value).compareTo(Double.valueOf(otherBuy.getValue()));
+    public int compareTo(PurchaseManager otherPurchaseManager) {
+        return Double.valueOf(this.value).compareTo(Double.valueOf(otherPurchaseManager.getValue()));
     }
 }

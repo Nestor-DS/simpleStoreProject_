@@ -1,4 +1,4 @@
-import com.nds.storeProject.Buy;
+import com.nds.storeProject.PurchaseManager;
 import com.nds.storeProject.CreditCard;
 
 import java.util.Collections;
@@ -19,7 +19,7 @@ public class Main {
             System.out.println("Escriba el valor de la compra:");
             double value = Double.valueOf(scanner.next());
 
-            var buy = new Buy(value, description);
+            var buy = new PurchaseManager(value, description);
             boolean purchaseMade = creditCard.launchBuy(buy);
 
             if(purchaseMade){
@@ -34,8 +34,8 @@ public class Main {
         System.out.println("********************");
         System.out.println("COMPRAS REALIZADAS:");
         Collections.sort(creditCard.getShoppingList());
-        for (Buy buy : creditCard.getShoppingList()){
-            System.out.println(buy.getDescription() + " " + buy.getValue());
+        for (PurchaseManager purchaseManager : creditCard.getShoppingList()){
+            System.out.println(purchaseManager.getDescription() + " " + purchaseManager.getValue());
         }
         System.out.println("\n********************");
         System.out.println("\nSaldo de la tarjeta: "+creditCard.getBalance());

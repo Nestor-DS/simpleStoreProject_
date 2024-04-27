@@ -6,7 +6,7 @@ import java.util.List;
 public class CreditCard {
     private double limit;
     private double balance;
-    private List<Buy>shoppingList;
+    private List<PurchaseManager>shoppingList;
 
     public CreditCard(double limit) {
         this.limit = limit;
@@ -14,10 +14,10 @@ public class CreditCard {
         this.shoppingList = new ArrayList<>();
     }
 
-    public boolean launchBuy(Buy buy){
-        if(this.balance > buy.getValue()){
-            this.balance -= buy.getValue();
-            this.shoppingList.add(buy);
+    public boolean launchBuy(PurchaseManager purchaseManager){
+        if(this.balance > purchaseManager.getValue()){
+            this.balance -= purchaseManager.getValue();
+            this.shoppingList.add(purchaseManager);
             return true;
         } else {
             return false;
@@ -32,7 +32,7 @@ public class CreditCard {
         return balance;
     }
 
-    public List<Buy> getShoppingList() {
+    public List<PurchaseManager> getShoppingList() {
         return shoppingList;
     }
 }
